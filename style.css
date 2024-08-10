@@ -6,6 +6,7 @@ body {
     background-color: #121212;
     color: #cccccc;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 div {
@@ -22,7 +23,8 @@ div {
 
 div#selection, div#results {
     border: none;
-    z-index: -1;
+    z-index: 0;
+    transition-duration: 1.0s;
 }
 
 div#block-member > label {
@@ -47,6 +49,7 @@ div#block-member input#block-member-points {
 
 div#key-binding {
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -309,6 +312,7 @@ table#cca-points-list td {
 }
 
 .about-points-allocation-button button {
+    z-index: 3;
     width: 50px;
     height: 50px;
     --border-angle-1: 0deg;
@@ -397,7 +401,7 @@ button > div {
 /* ---------------------------------------------- */
 
 .about-points-allocation-tag {
-    z-index: 2;
+    z-index: 3;
     transform: translateY(-500vh);
     transition-duration: 1.5s;
     position: fixed;

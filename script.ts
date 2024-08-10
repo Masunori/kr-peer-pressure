@@ -874,6 +874,7 @@ function calculate() {
             return;
         }
 
+
         if (ccaObject instanceof Sports) { // handle Sports CCA logic
             const sportsObject = <Sports>ccaObject;
             const roleList = cca.children[3];       // get the role list (the select element)
@@ -1078,6 +1079,7 @@ function getPointBreakdownAccordingToCCAs() {
 }
 
 function outputToPoints(func: () => number[]) {
+    func();
     const points = document.getElementsByClassName("point");
     if (points != null) {
         points[0].innerHTML = pointPillarDistribution.reduce((accumulator, curr) => accumulator + curr, 0).toString();
@@ -1118,12 +1120,19 @@ function outputToResults() {
             error instanceof Error ? outputToDummy(error.message) : outputToDummy("WTF???");
         }
 
-        outputToDummy(1111);
-
         const selection = document.getElementById("selection");
-        if (selection != null) {
+        const results = document.getElementById("results");
+        if (selection != null && results != null) {
             selection.style.pointerEvents = "none";
-            selection.style.filter = "blur(3px)";
+            selection.style.filter = "blur(7px)";
+            
+            if (window.innerWidth > 800) {
+                selection.style.width = "35%";
+                selection.style.maxWidth = "250px";
+
+                results.style.width = "65%";
+                results.style.maxWidth = "500px";
+            }
         }
     }
 }
@@ -1132,7 +1141,7 @@ function outputToDummy(content: any) {
     const dummy = document.getElementById("dummy");
 
     if (dummy instanceof HTMLDivElement) {
-        dummy.innerHTML = content.toString();
+        dummy.innerHTML += ("\n" + content.toString());
     }
 }
 

@@ -8,14 +8,6 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="about-points-allocation-button">
-        <!-- A floating button that will open the points allocation tab. -->
-        <button type="button" onclick="toggleAboutPointsCounter()">
-            <div>
-                ?
-            </div>
-        </button>
-    </div>
     <div class="about-points-allocation-tag">
         <div>
             <h2 id="welcome">About Kent Ridge Hall CCA Points Counter</h2>
@@ -1086,13 +1078,6 @@
                         <td class="point" id="special-numeral">0</td>
                     </tr>
                 </table>
-                <!-- <ul id="pillar-points-list">
-                    <li><p>Sports: <p class="point" id="sports-numeral"></p></p></li>
-                    <li><p>Culture: <p class="point" id="culture-numeral"></p></p></li>
-                    <li><p>Committees: <p class="point" id="committees-numeral"></p></p></li>
-                    <li><p>Leadership: <p class="point" id="leadership-numeral"></p></p></li>
-                    <li><p>Special: <p class="point" id="special-numeral"></p></p></li>
-                </ul> -->
             </div>
             <div id="cca-points">
                 <p><b>Points breakdown according to CCA participation</b></p>
@@ -1104,9 +1089,17 @@
                     </tr>
                 </table>
             </div>
-            <div id="dummy" style="border: none;">
-
+            <div class="about-points-allocation-button">
+                <!-- A floating button that will open the points allocation tab. -->
+                <button type="button" onclick="toggleAboutPointsCounter()">
+                    <div>
+                        ?
+                    </div>
+                </button>
             </div>
+            <!-- <div id="dummy" style="border: none;">
+
+            </div> -->
         </div>
     </main>
     <footer style="height: 100px;">

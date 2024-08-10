@@ -1043,6 +1043,7 @@ function getPointBreakdownAccordingToCCAs() {
     listOfCCAProfiles.forEach(addElementToCCAPointList);
 }
 function outputToPoints(func) {
+    func();
     var points = document.getElementsByClassName("point");
     if (points != null) {
         points[0].innerHTML = pointPillarDistribution.reduce(function (accumulator, curr) { return accumulator + curr; }, 0).toString();
@@ -1077,18 +1078,24 @@ function outputToResults() {
         catch (error) {
             error instanceof Error ? outputToDummy(error.message) : outputToDummy("WTF???");
         }
-        outputToDummy(1111);
         var selection = document.getElementById("selection");
-        if (selection != null) {
+        var results = document.getElementById("results");
+        if (selection != null && results != null) {
             selection.style.pointerEvents = "none";
-            selection.style.filter = "blur(3px)";
+            selection.style.filter = "blur(7px)";
+            if (window.innerWidth > 800) {
+                selection.style.width = "35%";
+                selection.style.maxWidth = "250px";
+                results.style.width = "65%";
+                results.style.maxWidth = "500px";
+            }
         }
     }
 }
 function outputToDummy(content) {
     var dummy = document.getElementById("dummy");
     if (dummy instanceof HTMLDivElement) {
-        dummy.innerHTML = content.toString();
+        dummy.innerHTML += ("\n" + content.toString());
     }
 }
 // add all event listeners
