@@ -1,0 +1,453 @@
+a {
+    color: inherit;
+}
+
+body {
+    background-color: #121212;
+    color: #cccccc;
+    font-family: sans-serif;
+}
+
+div {
+    border-bottom: 1px solid #606060;
+    background-color: #242424;
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* div#selection > div {
+    max-height: 65px;
+    overflow: hidden;
+} */
+
+div#selection, div#results {
+    border: none;
+    z-index: -1;
+}
+
+div#block-member > label {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+      "text point";
+    align-items: center;
+}
+
+div#block-member p#block-member-points-description {
+    grid-area: text;
+    width: fit-content;
+    text-wrap: wrap;
+}
+
+div#block-member input#block-member-points {
+    grid-area: point;
+    height: fit-content;
+}
+
+div#key-binding {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    max-width: 800px;
+    margin: 200px auto 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input[class="media-cca-checkbox"] {
+    grid-area: checkbox;
+    width: 13px;
+    height: 13px;
+}
+
+label[id$="-assignment"] {
+    grid-area: assignment;
+}
+
+li {
+    margin: 0;
+    padding: 10px;
+}
+
+li label {
+    width: 0;
+}
+
+li input ~ * {
+    visibility: hidden;
+}
+
+li input:checked ~ * {
+    visibility: visible;
+}
+
+li.custom-ham-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: [col1] 30px [col2] auto [col3];
+    grid-template-rows: [row1] 45px [row2] 30px [row3];
+    grid-template-areas: 
+      "checkbox name"
+      ". .";
+      justify-items: left;
+      align-items: center;
+}
+
+li.custom-points {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: [col1] 30px [col2] 1fr [col3] 10px [col4] 1fr [col5];
+    grid-template-rows: [row1] 45px [row2] 30px [row3];
+    grid-template-areas: 
+      "checkbox name . role"
+      "assignment assignment assignment assignment";
+    justify-items: left;
+    align-items: center;
+}
+
+li.custom-points-special {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: [col1] 30px [col2] auto [col3];
+    grid-template-rows: [row1] 45px [row2] 30px [row3];
+    grid-template-areas: 
+      "checkbox name"
+      "assignment assignment";
+      justify-items: left;
+      align-items: center;
+}
+
+li.custom-points-special input:first-of-type {
+    grid-area: checkbox;
+    justify-self: center;
+    align-self: center;
+}
+
+li.custom-points-special p:first-of-type {
+    grid-area: name;
+}
+
+li.custom-points-special label[for$="-points"] {
+    grid-area: assignment;
+    width: 300%;
+}
+
+li.point-computation-component:nth-child(even) {
+    background-color: #424242;
+}
+
+li.point-computation-component:nth-child(odd) {
+    background-color: #333;
+}
+
+li label.assignment {
+    width: 10000%;
+    margin: auto;
+}
+
+li.custom-points select {
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+}
+
+li select {
+    width: 33%;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+li.point-computation-component:not([class*="custom"]) {
+    display: grid;
+    grid-template-columns: 30px 3fr 2fr;
+    grid-template-rows: 50px;
+    grid-template-areas: 
+        "checkbox name role";
+    align-items: center;
+}
+
+li.point-computation-component:not([class*="custom"]) input {
+    grid-area: checkbox;
+    justify-self: center;
+    align-self: center;
+}
+
+li.point-computation-component:not([class*="custom"]) p:first-of-type {
+    grid-area: name;
+}
+
+li.point-computation-component:not([class*="custom"]) select {
+    grid-area: role;
+    height: fit-content;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main > div#results {
+    width: 35%;
+    max-width: 250px;
+    padding: 10px;
+}
+
+main > div#selection {
+    width: 65%;
+    max-width: 500px;
+    padding: 10px;
+}
+
+p[id$="-name"] {
+    grid-area: name;
+}
+
+select[id$="-role"] {
+    grid-area: role;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+}
+
+.checklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+[class *= "points"] {
+    padding: 0px 10px;
+}
+
+/* RESPONSIVE WEB DESIGN  */
+@media screen and (max-width: 800px) {
+    header {
+        width: 80%;
+    }
+
+    main {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    main > div#results {
+        width: 100%;
+        max-width: 800px;
+        border: none;
+        margin: 2px;
+    }
+    
+    main > div#selection {
+        width: 100%;
+        max-width: 800px;
+        border: none;
+        margin: 2px;
+    }
+}
+
+table#points-by-pillar {
+    border: 1px solid #606060;
+    border-collapse: separate;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+table#points-by-pillar th, table#points-by-pillar td {
+    border: 1px solid #606060;
+    width: 50%;
+}
+
+table#cca-points-list {
+    border: 1px solid #606060;
+    border-collapse: separate;
+}
+
+table#cca-points-list th {
+    /* writing-mode: vertical-lr; */
+    border: 1px solid #606060;
+    white-space: nowrap;
+    height: auto;
+    width: fit-content;
+    padding: 10px;
+    text-align: left;
+}
+
+table#cca-points-list td {
+    border: 1px solid #606060;
+}
+
+/* ----------------------------- */
+/* THE FLOATING QUESTION BUTTON  */
+/* ----------------------------- */
+
+.about-points-allocation-button {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    border: none;
+    background-color: transparent;
+}
+
+.about-points-allocation-button button {
+    width: 50px;
+    height: 50px;
+    --border-angle-1: 0deg;
+    --border-angle-2: 90deg;
+    --border-angle-3: 180deg;
+    color: var(--foreground);
+    font-size: 2rem;
+    border: 0;
+    padding: var(--border-size);
+    display: flex;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    background-image:
+      conic-gradient(from var(--border-angle-1) at 10% 15%, transparent, var(--bright-blue) 10%, transparent 30%, transparent),
+      conic-gradient(from var(--border-angle-2) at 70% 60%, transparent, var(--bright-green) 10%, transparent 60%, transparent),
+      conic-gradient(from var(--border-angle-3) at 50% 20%, transparent, var(--bright-red) 10%, transparent 50%, transparent);
+    animation:
+      rotateBackground-1 3s linear infinite,
+      rotateBackground-2 8s linear infinite,
+      rotateBackground-3 13s linear infinite;
+    transition-duration: 0.25s;
+}
+
+.about-points-allocation-button button:hover {
+    width: 55px;
+    height: 55px;
+}
+
+@property --border-angle-1 {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+  
+@property --border-angle-2 {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 90deg;
+}
+  
+@property --border-angle-3 {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 180deg;
+}
+  
+:root {
+    --bright-blue: rgb(0, 100, 255);
+    --bright-green: rgb(0, 255, 0);
+    --bright-red: rgb(255, 0, 0);
+    --background: black;
+    --foreground: white;
+    --border-size: 2px;
+    --border-radius: 0.75em;
+}
+  
+@keyframes rotateBackground-1 {
+    to {
+      --border-angle-1: 360deg;
+    }
+}
+  
+@keyframes rotateBackground-2 {
+    to {
+      --border-angle-2: -270deg;
+    }
+}
+  
+@keyframes rotateBackground-3 {
+    to {
+      --border-angle-3: 360deg;
+    }
+}
+
+button > div {
+    background: var(--background);
+    width: 50px;
+    height: auto;
+    border-radius: calc(var(--border-radius) - var(--border-size));
+    transition-duration: 0.25s;
+    margin: auto;
+}
+
+/* ---------------------------------------------- */
+/* THE FLOATING DOCUMENT ABOUT POINTS ALLOCATION  */
+/* ---------------------------------------------- */
+
+.about-points-allocation-tag {
+    z-index: 2;
+    transform: translateY(-500vh);
+    transition-duration: 1.5s;
+    position: fixed;
+    width: 70%;
+    height: 90%;
+    top: 0%;
+    left: 15vw;
+    margin: auto;
+    background-color: #424242;
+    overflow-x: hidden;
+    overflow-y: auto;
+    --border-angle-1: 0deg;
+    --border-angle-2: 90deg;
+    --border-angle-3: 180deg;
+    color: var(--foreground);
+    border: 0;
+    padding: 2px;
+    background-color: #121212;
+    background-image:
+      conic-gradient(from var(--border-angle-1) at 10% 15%, transparent, var(--bright-blue) 10%, transparent 30%, transparent),
+      conic-gradient(from var(--border-angle-2) at 70% 60%, transparent, var(--bright-green) 10%, transparent 60%, transparent),
+      conic-gradient(from var(--border-angle-3) at 50% 20%, transparent, var(--bright-red) 10%, transparent 50%, transparent);
+    animation:
+      rotateBackground-1 3s linear infinite,
+      rotateBackground-2 8s linear infinite,
+      rotateBackground-3 13s linear infinite;
+}
+
+.about-points-allocation-tag h2#welcome {
+    text-align: center;
+    width: 50%;
+    margin: 30px auto;
+}
+
+.about-points-allocation-tag > div > * {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0;
+}
+
+.about-points-allocation-tag tr:nth-child(even) {
+    background-color: #333;
+}
+
+table {
+    border: 1px solid #606060;
+    border-collapse: separate;
+}
+
+table th, table td {
+    border: 1px solid #606060;
+    padding: 5px;
+}

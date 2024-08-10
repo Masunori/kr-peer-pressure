@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kent Ridge Hall CCA Points Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="about-points-allocation-button">
+        <!-- A floating button that will open the points allocation tab. -->
+        <button type="button" onclick="toggleAboutPointsCounter()">
+            <div>
+                ?
+            </div>
+        </button>
+    </div>
+    <div class="about-points-allocation-tag">
+        <div>
+            <h2 id="welcome">About Kent Ridge Hall CCA Points Counter</h2>
+            <p>Kent Ridge Hall CCA Points Counter belongs to the <a href="https://youtu.be/dQw4w9WgXcQ?si=WDrRQfDVg3Zdf1HV">KR Utility series</a>, which aims to ease your life in KR.</p>
+            <p>This points counter's logic is based on the following assumptions and conditions:</p>
+            <ul>
+                <li>This follows, to its best understanding, the points briefing AY24/25 PowerPoint slide.</li>
+                <li>For sports CCAs, all roles except Members are assumed to be in the training team and earn an extra 6 points.</li>
+                <li>When the custom point input is not available, it is assumed that you get the highest possible points for that CCA and role.</li>
+            </ul>
+            <p>Please note the following when using the points counter:</p>
+            <ul>
+                <li>After selecting you choices and calculating, the selection will be disabled, and the results will appear. Reload the page to perform another calculation.</li>
+                <li>Please note the following CCA abbreviations in the results table:
+                <table>
+                    <tr>
+                        <th>CCA Name</th>
+                        <th>CCA Abbreviation</th>
+                    </tr>
+                    <tr>
+                        <td>Badminton</td>
+                        <td>SPO-BDMN</td>
+                    </tr>
+                    <tr>
+                        <td>Basketball</td>
+                        <td>SPO-BSKT</td>
+                    </tr>
+                    <tr>
+                        <td>Floorball</td>
+                        <td>SPO-FLRB</td>
+                    </tr><tr>
+                        <td>Frisbee (mixed)</td>
+                        <td>SPO-FRSB</td>
+                    </tr><tr>
+                        <td>Handball</td>
+                        <td>SPO-HNDB</td>
+                    </tr><tr>
+                        <td>Netball (female only)</td>
+                        <td>SPO-NTBL</td>
+                    </tr><tr>
+                        <td>Road Relay</td>
+                        <td>SPO-RDRL</td>
+                    </tr><tr>
+                        <td>Sepak Takraw (male only)</td>
+                        <td>SPO-SPTK</td>
+                    </tr><tr>
+                        <td>Soccer</td>
+                        <td>SPO-SCCR</td>
+                    </tr><tr>
+                        <td>Softball (mixed)</td>
+                        <td>SPO-SFTB</td>
+                    </tr><tr>
+                        <td>Squash</td>
+                        <td>SPO-SQSH</td>
+                    </tr><tr>
+                        <td>Swimming</td>
+                        <td>SPO-SWMM</td>
+                    </tr><tr>
+                        <td>Table Tennis</td>
+                        <td>SPO-TBTN</td>
+                    </tr><tr>
+                        <td>Tennis</td>
+                        <td>SPO-TNNS</td>
+                    </tr><tr>
+                        <td>Touch Rugby</td>
+                        <td>SPO-TRUG</td>
+                    </tr><tr>
+                        <td>Track</td>
+                        <td>SPO-TRCK</td>
+                    </tr><tr>
+                        <td>Volleyball</td>
+                        <td>SPO-VLLB</td>
+                    </tr><tr>
+                        <td>KR Acapella</td>
+                        <td>CUL-ACAP</td>
+                    </tr><tr>
+                        <td>KR Inspire</td>
+                        <td>CUL-INSP</td>
+                    </tr><tr>
+                        <td>KRockers</td>
+                        <td>CUL-ROCK</td>
+                    </tr><tr>
+                        <td>KR Choir</td>
+                        <td>CUL-CHOIR</td>
+                    </tr><tr>
+                        <td>KR Dance</td>
+                        <td>CUL-DANCE</td>
+                    </tr><tr>
+                        <td>KR Steppers</td>
+                        <td>CUL-STPR</td>
+                    </tr><tr>
+                        <td>KR Hall Production</td>
+                        <td>CUL-KRHP</td>
+                    </tr><tr>
+                        <td>Alumni Relations and Engagement</td>
+                        <td>COM-ARE</td>
+                    </tr><tr>
+                        <td>External Events Committee</td>
+                        <td>COM-EEC</td>
+                    </tr><tr>
+                        <td>KR Volunteers</td>
+                        <td>COM-KRV</td>
+                    </tr><tr>
+                        <td>Safety Committee</td>
+                        <td>COM-SAFE</td>
+                    </tr><tr>
+                        <td>Social Relations Unit</td>
+                        <td>COM-SRU</td>
+                    </tr><tr>
+                        <td>Welfare Committee</td>
+                        <td>COM-WLFR</td>
+                    </tr><tr>
+                        <td>Youth Expedition Project</td>
+                        <td>COM-YEP</td>
+                    </tr><tr>
+                        <td>JCRC Special Executives - Finance</td>
+                        <td>COM-JRCRFINEX</td>
+                    </tr><tr>
+                        <td>JC Outreach Executives</td>
+                        <td>COM-JCOEX</td>
+                    </tr><tr>
+                        <td>Culture Executives</td>
+                        <td>COM-CULEX</td>
+                    </tr><tr>
+                        <td>Heritage Committee</td>
+                        <td>COM-HRT</td>
+                    </tr><tr>
+                        <td>IT and Automation Committee</td>
+                        <td>COM-ITA</td>
+                    </tr><tr>
+                        <td>KR Enterprise Committee</td>
+                        <td>COM-KRE</td>
+                    </tr><tr>
+                        <td>Environment Committee</td>
+                        <td>COM-ENV</td>
+                    </tr><tr>
+                        <td>Junior Common Room Committee</td>
+                        <td>COM-JCRC</td>
+                    </tr><tr>
+                        <td>Block Committee</td>
+                        <td>COM-BLK</td>
+                    </tr><tr>
+                        <td>Hall Promotion Board</td>
+                        <td>COM-HPB</td>
+                    </tr><tr>
+                        <td>Receive and Give Committee</td>
+                        <td>COM-RAG</td>
+                    </tr><tr>
+                        <td>FLAG Committee</td>
+                        <td>COM-FLAG</td>
+                    </tr><tr>
+                        <td>Freshmen Welcome Orientation Week Committee</td>
+                        <td>COM-FWOC</td>
+                    </tr><tr>
+                        <td>KRaphics</td>
+                        <td>COM-GRA</td>
+                    </tr><tr>
+                        <td>Video Production Committee</td>
+                        <td>COM-VPT</td>
+                    </tr><tr>
+                        <td>Photo Committee</td>
+                        <td>COM-PHT</td>
+                    </tr><tr>
+                        <td>Hall Annual Magazine Team</td>
+                        <td>COM-HAM</td>
+                    </tr><tr>
+                        <td>Technical Support Unit</td>
+                        <td>COM-TSU</td>
+                    </tr><tr>
+                        <td>KReporters</td>
+                        <td>COM-RPT</td>
+                    </tr><tr>
+                        <td>RAG Floaters</td>
+                        <td>SPE-RAGF</td>
+                    </tr><tr>
+                        <td>RAG Dancers</td>
+                        <td>SPE-RAGD</td>
+                    </tr><tr>
+                        <td>Emcees</td>
+                        <td>SPE-MC</td>
+                    </tr><tr>
+                        <td>Camp Blue Blood Facilitators</td>
+                        <td>SPE-CBBF</td>
+                    </tr><tr>
+                        <td>FWOC Seniors</td>
+                        <td>SPE-FWOCS</td>
+                    </tr><tr>
+                        <td>CBB/FWOC Safety Personnel</td>
+                        <td>SPE-CFSP</td>
+                    </tr><tr>
+                        <td>Stage Crew</td>
+                        <td>SPE-SC</td>
+                    </tr><tr>
+                        <td>Elections Committee Member</td>
+                        <td>SPE-ECM</td>
+                    </tr><tr>
+                        <td>Merit Allocation Board</td>
+                        <td>SPE-MAB</td>
+                    </tr><tr>
+                        <td>Points Allocation Board</td>
+                        <td>SPE-PAB</td>
+                    </tr><tr>
+                        <td>Open Day Ambassadors</td>
+                        <td>SPE-ODA</td>
+                    </tr><tr>
+                        <td>Star2Burst Performers</td>
+                        <td>SPE-S2B</td>
+                    </tr><tr>
+                        <td>Sports Student Coach - Own Gender</td>
+                        <td>SPE-C-OWN</td>
+                    </tr><tr>
+                        <td>Sports Student Coach - Ooopsite Gender</td>
+                        <td>SPE-C-OPP</td>
+                    </tr><tr>
+                        <td>Summer Finance Executives</td>
+                        <td>SPE-SFE</td>
+                    </tr><tr>
+                        <td>Significant Media Contributions</td>
+                        <td>SPE-MDC</td>
+                    </tr><tr>
+                        <td>Friends of KRV</td>
+                        <td>SPE-FOKRV</td>
+                    </tr><tr>
+                        <td>JC Outreach Participants</td>
+                        <td>SPE-JCOP</td>
+                    </tr><tr>
+                        <td>Additional Contributions</td>
+                        <td>SPE-AC</td>
+                    </tr>
+                </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="key-binding">
+        <h4>Computer Key Binding</h4>
+        <table>
+            <tr>
+                <th>Q</th>
+                <td>Toggle "About Kent Ridge Hall CCA Points Counter". Can press on the "?" button at the bottom-left corner.</td>
+            </tr>
+            <tr>
+                <th>Enter</th>
+                <td>Calculate Points. Can press on the Calculate button at the end of your selection.</td>
+            </tr>
+        </table>
+    </div>
+    <header>
+        <h1>Kent Ridge Hall CCA Points Counter</h1>
+        <h2>Special shoutout to the PAB committee for this wonderful point balancing!!!</h2>
+    </header>
+    <main>
+        <div id="selection">
+            <div id="block-member">
+                <label for="block-member-points">
+                    <p id="block-member-points-description">Select your block member score from 0 to 10. Or else, 4 is the default.</p>
+                    <input id="block-member-points" type="number" min="0" max="10" placeholder="4" name="block-member-points" value="4">
+                </label>
+            </div>
+            <div id="sports-cca">
+                <h2>1. Sports CCAs</h2>
+                <p>Tick in the boxes corresponding to your sports CCAs.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="badminton"></label>
+                        <p>Badminton</p>
+                        <input type="checkbox" id="badminton" name="sports" value="badminton">
+                        <select id="badminton-role" name="badminton-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="basketball"></label>
+                        <p>Basketball</p>
+                        <input type="checkbox" id="basketball" name="sports" value="basketball">
+                        <select id="basketball-role" name="basketball-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="floorball"></label>
+                        <p>Floorball</p>
+                        <input type="checkbox" id="floorball" name="sports" value="floorball">
+                        <select id="floorball-role" name="floorball-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="frisbee-mixed"></label>
+                        <p>Frisbee (Mixed)</p>
+                        <input type="checkbox" id="frisbee-mixed" name="sports" value="frisbee-mixed">
+                        <select id="frisbee-mixed-role" name="frisbee-mixed-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="handball"></label>
+                        <p>Handball</p>
+                        <input type="checkbox" id="handball" name="sports" value="handball">
+                        <select id="handball-role" name="handball-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="netball"></label>
+                        <p>Netball (female only)</p>
+                        <input type="checkbox" id="netball" name="sports" value="netball">
+                        <select id="netball-role" name="netball-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="road-relay"></label>
+                        <p>Road Relay</p>
+                        <input type="checkbox" id="road-relay" name="sports" value="road-relay">
+                        <select id="road-relay-role" name="road-relay-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="sepak-takraw"></label>
+                        <p>Sepak Takraw (male only)</p>
+                        <input type="checkbox" id="sepak-takraw" name="sports" value="sepak-takraw">
+                        <select id="sepak-takraw-role" name="sepak-takraw-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="soccer"></label>
+                        <p>Soccer</p>
+                        <input type="checkbox" id="soccer" name="sports" value="soccer">
+                        <select id="soccer-role" name="soccer-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="softball-mixed"></label>
+                        <p>Softball (Mixed)</p>
+                        <input type="checkbox" id="softball-mixed" name="sports" value="softball-mixed">
+                        <select id="softball-mixed-role" name="softball-mixed-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="squash"></label>
+                        <p>Squash</p>
+                        <input type="checkbox" id="squash" name="sports" value="squash">
+                        <select id="squash-role" name="squash-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="swimming"></label>
+                        <p>Swimming</p>
+                        <input type="checkbox" id="swimming" name="sports" value="swimming">
+                        <select id="swimming-role" name="swimming-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="table-tennis"></label>
+                        <p>Table Tennis</p>
+                        <input type="checkbox" id="table-tennis" name="sports" value="table-tennis">
+                        <select id="table-tennis-role" name="table-tennis-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="tennis"></label>
+                        <p>Tennis</p>
+                        <input type="checkbox" id="tennis" name="sports" value="tennis">
+                        <select id="tennis-role" name="tennis-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="touch-rugby"></label>
+                        <p>Touch Rugby</p>
+                        <input type="checkbox" id="touch-rugby" name="sports" value="touch-rugby">
+                        <select id="touch-rugby-role" name="touch-rugby-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="track"></label>
+                        <p>Track</p>
+                        <input type="checkbox" id="track" name="sports" value="track">
+                        <select id="track-role" name="track-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="volleyball"></label>
+                        <p>Volleyball</p>
+                        <input type="checkbox" id="volleyball" name="sports" value="volleyball">
+                        <select id="volleyball-role" name="volleyball-role">
+                            <option value="member">Member</option>
+                            <option value="captain">Captain</option>
+                            <option value="co-captain">Co-Captain</option>
+                            <option value="vice-captain">Vice-Captain</option>
+                            <option value="training-team">Training Team</option>
+                            <option value="team-manager">Team Manager</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="culture-cca">
+                <h2>2. Culture CCAs</h2>
+                <p>Culture Executives - Refer to <a href="#major-committees">Section 3, Major Committees</a>.</p>
+                <p>KR Dance Production - Refer to <a href="#special-committees">Section 6, Special Committees</a>.</p>
+                <p>Tick in the boxes corresponding to your culture CCAs.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="acapella"></label>
+                        <p>KR Acapella</p>
+                        <input type="checkbox" id="acapella" name="culture" value="acapella">
+                        <select id="acapella-role" name="acapella-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="inspire"></label>
+                        <p>KR Inspire</p>
+                        <input type="checkbox" id="inspire" name="culture" value="inspire">
+                        <select id="inspire-role" name="inspire-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="rockers"></label>
+                        <p>KR Rockers</p>
+                        <input type="checkbox" id="rockers" name="culture" value="rockers">
+                        <select id="rockers-role" name="rockers-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="choir"></label>
+                        <p>KR Choir</p>
+                        <input type="checkbox" id="choir" name="culture" value="choir">
+                        <select id="choir-role" name="choir-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="dance"></label>
+                        <p>KR Dance</p>
+                        <input type="checkbox" id="dance" name="culture" value="dance">
+                        <select id="dance-role" name="dance-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="remix"></label>
+                        <p>KRemix</p>
+                        <input type="checkbox" id="remix" name="culture" value="remix">
+                        <select id="remix-role" name="remix-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="steppers"></label>
+                        <p>KR Steppers</p>
+                        <input type="checkbox" id="steppers" name="culture" value="steppers">
+                        <select id="steppers-role" name="steppers-role">
+                            <option value="member">Member</option>
+                            <option value="committee-member">Committee Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="krhp"></label>
+                        <p>KR Hall Production</p>
+                        <input type="checkbox" id="krhp" name="culture" value="krhp">
+                        <select id="krhp-role" name="krhp-role">
+                            <option value="cast-performer">Cast/Performer</option>
+                            <option value="main-cast">Main Cast</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="major-committees">
+                <h2>3. Major Committees</h2>
+                <p>Committees which require a large amount of commitment. Typically handles 4 or more events in Hall or equivalent workload.</p>
+                <p>Tick in the boxes corresponding to your major committees.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="are"></label>
+                        <p>Alumni Relations and Engagement (ARE)</p>
+                        <input type="checkbox" id="are" name="major-committees" value="are">
+                        <select id="are-role" name="are-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="eec"></label>
+                        <p>External Events Committee (EEC)</p>
+                        <input type="checkbox" id="eec" name="major-committees" value="eec">
+                        <select id="eec-role" name="eec-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="krv"></label>
+                        <p>Kent Ridge Volunteers (KRV)</p>
+                        <input type="checkbox" id="krv" name="major-committees" value="krv">
+                        <select id="krv-role" name="krv-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="safety"></label>
+                        <p>Safety Committee</p>
+                        <input type="checkbox" id="safety" name="major-committees" value="safety">
+                        <select id="safety-role" name="safety-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="sru"></label>
+                        <p>Social Relations Unit (SRU)</p>
+                        <input type="checkbox" id="sru" name="major-committees" value="sru">
+                        <select id="sru-role" name="sru-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="welfare"></label>
+                        <p>Welfare Committee</p>
+                        <input type="checkbox" id="welfare" name="major-committees" value="welfare">
+                        <select id="welfare-role" name="welfare-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="yep"></label>
+                        <p>Youth Expedition Project</p>
+                        <input type="checkbox" id="yep" name="major-committees" value="yep">
+                        <select id="yep-role" name="yep-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="jcrc-finance-exec"></label>
+                        <p>JCRC Special Executives - Finance</p>
+                        <input type="checkbox" id="jcrc-finance-exec" name="major-committees" value="jcrc-finance-exec">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="jco-exec"></label>
+                        <p>JC Outreach Executives</p>
+                        <input type="checkbox" id="jco-exec" name="major-committees" value="jco-exec">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="culture-exec"></label>
+                        <p>Culture Executives</p>
+                        <input type="checkbox" id="culture-exec" name="major-committees" value="culture-exec">
+                    </li>
+                </ul>
+            </div>
+            <div id="intermediate-committees">
+                <h2>4. Intermediate Committees</h2>
+                <p>Committees which require a moderate amount of commitment. Typically handles 3 or less events in Hall or equivalent workload.</p>
+                <p>Tick in the boxes corresponding to your intermediate committees.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="heritage"></label>
+                        <p>Heritage Committee</p>
+                        <input type="checkbox" id="heritage" name="intermediate-committees" value="heritage">
+                        <select id="heritage-role" name="heritage-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="ita"></label>
+                        <p>IT and Automation Committee (ITA)</p>
+                        <input type="checkbox" id="ita" name="intermediate-committees" value="ita">
+                        <select id="ita-role" name="ita-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="kre"></label>
+                        <p>KR Enterprise Committee (KRE)</p>
+                        <input type="checkbox" id="kre" name="intermediate-committees" value="kre">
+                        <select id="kre-role" name="kre-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="minor-committees">
+                <h2>5. Minor Committees</h2>
+                <p>Committees which require less to moderate amount of commitment. Typically handles 1 event in Hall or equivalent workload.</p>
+                <p>Tick in the boxes corresponding to your minor committees.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="environment"></label>
+                        <p>Environment Committee</p>
+                        <input type="checkbox" id="environment" name="minor-committees" value="environment">
+                        <select id="environment-role" name="environment-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="co-chairperson">Co-Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="special-committees">
+                <h2>6. Special Committees</h2>
+                <p>Committees which do not fall into any of the previous three categories. Typically handles ad-hoc assignments or a big Hall project.</p>
+                <p>Special Committees are still under the 40 points Comms segment cap.</p>
+                <p>Tick in the boxes corresponding to your special committees.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="jcrc"></label>
+                        <p>Junior Common Room Committee (JCRC) - Why are you even here?</p>
+                        <input type="checkbox" id="jcrc" name="special-committees" value="jcrc">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="block"></label>
+                        <p>Block Committee</p>
+                        <input type="checkbox" id="block" name="special-committees" value="block">
+                        <select id="block-role" name="block-role">
+                            <option value="member">Member</option>
+                            <option value="block-head">Block Head (Why are you even here?)</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="hpb"></label>
+                        <p>Hall Promotion Board (HPB)</p>
+                        <input type="checkbox" id="hpb" name="special-committees" value="hpb">
+                        <select id="hpb-role" name="hpb-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="krdp"></label>
+                        <p>KR Dance Production</p>
+                        <input type="checkbox" id="krdp" name="special-committees" value="krdp"> 
+                        <select id="krdp-role" name="krdp-role">
+                            <option value="stage-crew">Stage Crew</option>
+                            <option value="producer">Producer</option>
+                            <option value="director">Director</option>
+                            <option value="assistant-producer">Assistant Producer</option>
+                            <option value="assistant-director">Assistant Director</option>
+                            <option value="executives">Executive</option>
+                            <option value="stage-manager">Stage Manager</option>
+                            <option value="media-specialist">Media Specialist</option>
+                            <option value="publicity-team">Publicity Team</option>
+                            <option value="finance-team">Finance Team</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="orientation-committees">
+                <h2>7. Orientation Programme Committees</h2>
+                <p>You can only join ONE of these committees. Up to half the maximum points can be used to fulfill your missing points for the current academic year.</p>
+                <p>Orientation Programme Committees are still under the 40 points Comms segment cap.</p>
+                <p>Select an orientation programme committee.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="no-orientation-committee"></label>
+                        <p>No Orientation Programme Committee</p>
+                        <input type="radio" id="no-orientation-committee" name="orientation-committees" value="no-orientation-committee" checked>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="rag"></label>
+                        <p>Receive and Give (RAG) Committee</p>
+                        <input type="radio" id="rag" name="orientation-committees" value="rag">
+                        <select id="rag-role" name="rag-role">
+                            <option value="member">Member</option>
+                            <option value="project-director">Project Director or equivalent</option>
+                            <option value="vice-project-director">Vice-Project Director or Equivalent</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="flag"></label>
+                        <p>FLAG Committee</p>
+                        <input type="radio" id="flag" name="orientation-committees" value="flag">
+                        <select id="flag-role" name="flag-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson or equivalent</option>
+                            <option value="vice-chairperson">Vice-Chairperson or Equivalent</option>
+                        </select>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="fwoc"></label>
+                        <p>Freshmen Welcome Orientation Committee (FWOC)</p>
+                        <input type="radio" id="fwoc" name="orientation-committees" value="fwoc">
+                        <select id="fwoc-role" name="fwoc-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div id="media-committees">
+                <h2>8. Media Committees</h2>
+                <p>Tick in the boxes corresponding to your media committees.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component custom-points">
+                        <label for="kraphics"></label>
+                        <p id="kraphics-name">KRaphics</p>
+                        <input type="checkbox" id="kraphics" name="media-committees" value="kraphics" class="media-cca-checkbox">
+
+                        <select id="kraphics-role" name="kraphics-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                        <label for="kraphics-assignment" class="assignment">
+                            Number of assignments:
+                            <input id="kraphics-assignment" type="number" min="0" max="9" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points">
+                        <label for="vpt"></label>
+                        <p id="vpt-name">Video Production Team (VPT)</p>
+                        <input type="checkbox" id="vpt" name="media-committees" value="vpt" class="media-cca-checkbox">
+                        <select id="vpt-role" name="vpt-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                        <label for="vpt-assignment"  class="assignment">
+                            Number of assignments:
+                            <input id="vpt-assignment" type="number" min="0" max="9" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points">
+                        <label for="photo"></label>
+                        <p id="photo-name">Photo Committee</p>
+                        <input type="checkbox" id="photo" name="media-committees" value="photo" class="media-cca-checkbox">
+                        <select id="photo-role" name="photo-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperson</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                        <label for="photo-assignment" class="assignment">
+                            Number of assignments:
+                            <input id="photo-assignment" type="number" min="0" max="9" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points">
+                        <label for="tsu"></label>
+                        <p id="tsu-name">Technical Support Unit(TSU)</p>
+                        <input type="checkbox" id="tsu" name="media-committees" value="tsu" class="media-cca-checkbox">
+                        <select id="tsu-role" name="tsu-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperso</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                        <label for="tsu-assignment"  class="assignment">
+                            Number of assignments:
+                            <input id="tsu-assignment" type="number" min="0" max="9" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points">
+                        <label for="kreporters"></label>
+                        <p id="kreporters-name">KReporters</p>
+                        <input type="checkbox" id="kreporters" name="media-committees" value="kreporters" class="media-cca-checkbox">
+                        <select id="kreporters-role" name="kreporters-role">
+                            <option value="member">Member</option>
+                            <option value="chairperson">Chairperso</option>
+                            <option value="vice-chairperson">Vice-Chairperson</option>
+                        </select>
+                        <label for="kreporters-assignment" class="assignment">
+                            Number of assignments:
+                            <input id="kreporters-assignment" type="number" min="0" max="8" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-ham-grid">
+                        <label for="ham"></label>
+                        <p id="ham-name">Hall Annual Magazine (HAM) Co-editor</p>
+                        <input type="checkbox" id="ham" name="media-committees" value="ham" class="media-cca-checkbox">
+                    </li>
+                </ul>
+            </div>
+            <div id="special-contributions">
+                <h2>9. Special Contributions</h2>
+                <p>Tick in the boxes corresponding to your special contributions.</p>
+                <ul class="checklist">
+                    <li class="point-computation-component">
+                        <label for="rag-floaters"></label>
+                        <p>RAG Floaters (for KR RAG freshmen only)</p>
+                        <input type="checkbox" id="rag-floaters" name="special-contributions" value="rag-floaters">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="rag-dancers"></label>
+                        <p>RAG Dancers (for KR RAG freshmen only)</p>
+                        <input type="checkbox" id="rag-dancers" name="special-contributions" value="rag-dancers">
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="emcees"></label>
+                        <p>Emcees for various hall events</p>
+                        <input type="checkbox" id="emcees" name="special-contributions" value="emcees">
+                        <label for="emcee-points">
+                            Total estimated points:
+                            <input id="emcee-points" type="number" min="0" max="100" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="cbb-facilitators"></label>
+                        <p>Camp Blue Blood (CBB) Facilitators</p>
+                        <input type="checkbox" id="cbb-facilitators" name="special-contributions" value="cbb-facilitators">
+                        <label for="cbb-facilitators-points">
+                            Total estimated points:
+                            <input id="cbb-facilitators-points" type="number" min="0" max="100" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="fwoc-seniors"></label>
+                        <p>FWOC Official Seniors</p>
+                        <input type="checkbox" id="fwoc-seniors" name="special-contributions" value="fwoc-seniors">
+                        <label for="fwoc-seniors-points">
+                            Total estimated points:
+                            <input id="fwoc-seniors-points" type="number" min="0" max="100" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="cbb-fwoc-safety-personnel"></label>
+                        <p>CBB/FWOC Safety Personnel</p>
+                        <input type="checkbox" id="cbb-fwoc-safety-personnel" name="special-contributions" value="cbb-fwoc-safety-personnel">
+                        <label for="cbb-fwoc-safety-personnel-points">
+                            Total estimated points:
+                            <input id="cbb-fwoc-safety-personnel-points" type="number" min="0" max="100" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="stage-crew"></label>
+                        <p>Stage Crew for Dance Uncensored and Internal Culture Events</p>
+                        <input type="checkbox" id="stage-crew" name="special-contributions" value="stage-crew">
+                        <label for="stage-crew-points">
+                            Total estimated points:
+                            <input id="stage-crew-points" type="number" min="0" max="100" placeholder="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="ecm"></label>
+                        <p>Elections Committee Member</p>
+                        <input type="checkbox" id="ecm" name="special-contributions" value="ecm">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="mab"></label>
+                        <p>Merit Allocation Board (MAB) Member</p>
+                        <input type="checkbox" id="mab" name="special-contributions" value="mab">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="pab"></label>
+                        <p>Points Allocation Board (PAB) Member</p>
+                        <input type="checkbox" id="pab" name="special-contributions" value="pab">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="oda"></label>
+                        <p>Open Day Ambassadors</p>
+                        <input type="checkbox" id="oda" name="special-contributions" value="oda">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="s2b"></label>
+                        <p>Star2Burst Performer</p>
+                        <input type="checkbox" id="s2b" name="special-contributions" value="s2b">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="coach-own-gender"></label>
+                        <p>Sports Student Coach for Own Gender</p>
+                        <input type="checkbox" id="coach-own-gender" name="special-contributions" value="coach-own-gender">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="coach-opposite-gender"></label>
+                        <p>Sports Student Coach for Other Gender</p>
+                        <input type="checkbox" id="coach-opposite-gender" name="special-contributions" value="coach-opposite-gender">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="summer-finance-exec"></label>
+                        <p>Summer Finance Executive</p>
+                        <input type="checkbox" id="summer-finance-exec" name="special-contributions" value="summer-finance-exec">
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="media-contributions"></label>
+                        <p>Significant Media Contributions </p>
+                        <input type="checkbox" id="media-contributions" name="special-contributions" value="media-contributions">
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="fokrv"></label>
+                        <p>Friends of KRV</p>
+                        <input type="checkbox" id="fokrv" name="special-contributions" value="fokrv">
+                        <label for="fokrv-points">
+                            Total estimated points:
+                            <input id="fokrv-points" type="number" min="0" max="8" placeholder="0" name="fokrv-points" value="0">
+                        </label>
+                    </li>
+                    <li class="point-computation-component">
+                        <label for="jco-participants"></label>
+                        <p>JC Outreach Participants</p>
+                        <input type="checkbox" id="jco-participants" name="special-contributions" value="jco-participants">
+                    </li>
+                    <li class="point-computation-component custom-points-special">
+                        <label for="additional-contributions"></label>
+                        <p>Additional Contributions</p>
+                        <input type="checkbox" id="additional-contributions" name="special-contributions" value="additional-contributions">
+                        <label for="additional-contributions-points">
+                            Total estimated points:
+                            <input id="additional-contributions-points" type="number" min="0" max="100" placeholder="0" name="fokrv-points" value="0">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div id="button">
+                <button type="button" onclick="outputToResults()">Calculate</button>
+            </div>
+        </div>
+        <div id="results">
+            <div id="total-points">
+                <b>Total points: <p style="display: inline-block;" class="point" id="total-numeral">0</p></b>
+            </div>
+            <div id="pillar-points">
+                <p><b>Points breakdown according to pillars</b></p>
+                <table id="points-by-pillar">
+                    <tr>
+                        <th>Sports</th>
+                        <td class="point" id="sports-numeral">0</td>
+                    </tr>
+                    <tr>
+                        <th>Culture</th>
+                        <td class="point" id="culture-numeral">0</td>
+                    </tr>
+                    <tr>
+                        <th>Committees</th>
+                        <td class="point" id="committees-numeral">0</td>
+                    </tr>
+                    <tr>
+                        <th>Leadership</th>
+                        <td class="point" id="leadership-numeral">0</td>
+                    </tr>
+                    <tr>
+                        <th>Special</th>
+                        <td class="point" id="special-numeral">0</td>
+                    </tr>
+                </table>
+                <!-- <ul id="pillar-points-list">
+                    <li><p>Sports: <p class="point" id="sports-numeral"></p></p></li>
+                    <li><p>Culture: <p class="point" id="culture-numeral"></p></p></li>
+                    <li><p>Committees: <p class="point" id="committees-numeral"></p></p></li>
+                    <li><p>Leadership: <p class="point" id="leadership-numeral"></p></p></li>
+                    <li><p>Special: <p class="point" id="special-numeral"></p></p></li>
+                </ul> -->
+            </div>
+            <div id="cca-points">
+                <p><b>Points breakdown according to CCA participation</b></p>
+                <table id="cca-points-list">
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Points</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="dummy" style="border: none;">
+
+            </div>
+        </div>
+    </main>
+    <footer style="height: 100px;">
+        
+    </footer>
+</body>
+</html>
