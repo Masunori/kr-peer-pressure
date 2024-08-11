@@ -712,6 +712,7 @@ function initialiseCCAMap() {
     ccaMap.set("jcrc", new JCRC());
     ccaMap.set("block", new BlockComms());
     ccaMap.set("hpb", new HPB());
+    ccaMap.set("krdp", new KRDP());
     // add orientation programme committees
     ccaMap.set("rag", new RAG());
     ccaMap.set("flag", new FLAG());
@@ -792,6 +793,7 @@ function initialiseCCAMap() {
     ccaAbbr.set("jcrc", "COM-JRCR");
     ccaAbbr.set("block", "COM-BLK");
     ccaAbbr.set("hpb", "COM-HPB");
+    ccaAbbr.set("krdp", "COM-KRDP");
     // add orientation programme committees
     ccaAbbr.set("rag", "COM-RAG");
     ccaAbbr.set("flag", "COM-FLAG");
@@ -1083,13 +1085,14 @@ function outputToResults() {
         if (selection != null && results != null) {
             selection.style.pointerEvents = "none";
             selection.style.filter = "blur(7px)";
-            if (window.innerWidth > 800) {
-                selection.style.width = "35%";
-                selection.style.maxWidth = "250px";
-                results.style.width = "65%";
-                results.style.maxWidth = "500px";
-            }
+            // if (window.innerWidth > 1250) {
+            //     selection.style.width = "35%";
+            //     selection.style.maxWidth = "300px";
+            //     results.style.width = "65%";
+            //     results.style.maxWidth = "600px";
+            // }
         }
+        window.location.href = "#results";
     }
 }
 function outputToDummy(content) {
