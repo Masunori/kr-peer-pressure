@@ -239,9 +239,9 @@ select[id$="-role"] {
 }
 
 /* RESPONSIVE WEB DESIGN  */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
     header {
-        width: 80%;
+        width: 75%;
     }
 
     main {
@@ -296,6 +296,7 @@ table#cca-points-list th {
 
 table#cca-points-list td {
     border: 1px solid #606060;
+    max-width: 100px;
 }
 
 /* ----------------------------- */
