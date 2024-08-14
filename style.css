@@ -3,7 +3,7 @@ a {
 }
 
 body {
-    background-image: linear-gradient(to bottom, #484848 0%, #242424 5%, #121212 100%);
+    background-image: linear-gradient(to bottom, #484848 0%, #202020 5%, #121212 100%);
     color: #cccccc;
     font-family: sans-serif;
 }
@@ -142,7 +142,7 @@ li.custom-points-special p:first-of-type {
 
 li.custom-points-special label[for$="-points"] {
     grid-area: assignment;
-    width: 300%;
+    width: fit-content;
 }
 
 li.point-computation-component:nth-child(even) {
@@ -154,7 +154,7 @@ li.point-computation-component:nth-child(odd) {
 }
 
 li label.assignment {
-    width: 1000%;
+    width: 250px;
     margin: auto;
 }
 
@@ -239,9 +239,15 @@ select[id$="-role"] {
 }
 
 /* RESPONSIVE WEB DESIGN  */
+/* 
+- The key binding tab will disappear
+- Selection and results divisions will become one column 
+*/
+
 @media screen and (max-width: 1250px) {
     header {
         width: 75%;
+        margin: 180px auto;
     }
 
     main {
@@ -264,7 +270,13 @@ select[id$="-role"] {
         border: none;
         margin: 2px;
     }
+
+    div#key-binding {
+        display: none;
+    }
 }
+
+/* END OF RESPONSIVE WEB DESIGN */
 
 table#points-by-pillar {
     border: 1px solid #606060;

@@ -1103,10 +1103,10 @@ function outputToDummy(content) {
 }
 // add all event listeners
 document.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') { // Enter -> trigger calculation
+    if (event.key === 'e' || event.key === 'E') { // Enter -> trigger calculation
         outputToResults();
     }
-    else if (event.key === "q") { // Q -> toggle About Points Counter
+    else if (event.key === "q" || event.key === "Q") { // Q -> toggle About Points Counter
         toggleAboutPointsCounter();
     }
 });
