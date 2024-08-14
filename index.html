@@ -18,10 +18,7 @@
                 <li>For sports CCAs, all roles except Members are assumed to be in the training team and earn an extra 6 points.</li>
                 <li>When the custom point input is not available, it is assumed that you get the highest possible points for that CCA and role.</li>
             </ul>
-            <p>Please note the following when using the points counter:</p>
-            <ul>
-                <li>After selecting you choices and calculating, the selection will be disabled, and the results will appear. Reload the page to perform another calculation.</li>
-                <li>Please note the following CCA abbreviations in the results table:
+            <p><b>Please note the following CCA abbreviations in the results table:</b></p>
                 <table>
                     <tr>
                         <th>CCA Name</th>
@@ -241,8 +238,6 @@
                         <td>SPE-AC</td>
                     </tr>
                 </table>
-                </li>
-            </ul>
         </div>
     </div>
     <div id="key-binding">
@@ -258,7 +253,7 @@
             </tr>
         </table>
     </div>
-    <header>
+    <header id="header">
         <h1>Kent Ridge Hall CCA Points Counter</h1>
         <h2>Special shoutout to the PAB committee for this wonderful point balancing!!!</h2>
     </header>
@@ -1091,6 +1086,11 @@
                         <th>Points</th>
                     </tr>
                 </table>
+            </div>
+            <div id="to-hide-reset-button">
+                <div id="reset-button">
+                    <button type="button" onclick="resetCounter()">Reset</button>
+                </div>
             </div>
             <div class="about-points-allocation-button">
                 <!-- A floating button that will open the points allocation tab. -->
