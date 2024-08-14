@@ -1071,36 +1071,78 @@ function toggleAboutPointsCounter() {
     }
 }
 function outputToResults() {
-    if (!hasCalculated) { // Enter -> trigger calculation
+    if (!hasCalculated) { // E -> trigger calculation
         hasCalculated = true;
-        try {
-            outputToPoints(calculate);
-            getPointBreakdownAccordingToCCAs();
-        }
-        catch (error) {
-            error instanceof Error ? outputToDummy(error.message) : outputToDummy("WTF???");
-        }
+        // try {
+        //     outputToPoints(calculate);
+        //     getPointBreakdownAccordingToCCAs();
+        // } catch (error) {
+        //     error instanceof Error ? outputToDummy(error.message) : outputToDummy("WTF???");
+        // }
+        outputToPoints(calculate);
+        getPointBreakdownAccordingToCCAs();
+        // disable selection div
         var selection = document.getElementById("selection");
         var results = document.getElementById("results");
         if (selection != null && results != null) {
             selection.style.pointerEvents = "none";
             selection.style.filter = "blur(7px)";
-            // if (window.innerWidth > 1250) {
-            //     selection.style.width = "35%";
-            //     selection.style.maxWidth = "300px";
-            //     results.style.width = "65%";
-            //     results.style.maxWidth = "600px";
-            // }
         }
+        // display reset button
+        var hiddenResetButton = document.getElementById("to-hide-reset-button");
+        if (hiddenResetButton instanceof HTMLDivElement) {
+            hiddenResetButton.style.display = "block";
+        }
+        // shifts window to the results div
         window.location.href = "#results";
     }
 }
-function outputToDummy(content) {
-    var dummy = document.getElementById("dummy");
-    if (dummy instanceof HTMLDivElement) {
-        dummy.innerHTML += ("\n" + content.toString());
+function resetCounter() {
+    // reset point pillar distribution array
+    for (var i = 0; i < 5; i++) {
+        pointPillarDistribution[i] = 0;
     }
+    // redirect to the selection page (here is the top)
+    window.location.href = "#header";
+    // enable the table again
+    var selection = document.getElementById("selection");
+    var results = document.getElementById("results");
+    if (selection != null && results != null) {
+        selection.style.pointerEvents = "auto";
+        selection.style.filter = "none";
+    }
+    // wipe the points by CCA table and clear the CCA profile array
+    var table = document.getElementById("cca-points-list");
+    if (table instanceof HTMLTableElement) {
+        Array.from(table.children).forEach(function (item) {
+            if (item instanceof HTMLTableRowElement) {
+                table.removeChild(item);
+            }
+        });
+    }
+    // set all results to 0
+    var points = document.getElementsByClassName("point");
+    if (points != null) {
+        points[0].innerHTML = '0';
+        for (var i_1 = 1; i_1 < 6; i_1++) {
+            points[i_1].innerHTML = '0';
+        }
+    }
+    listOfCCAProfiles.length = 0;
+    // hide reset button
+    var hiddenResetButton = document.getElementById("to-hide-reset-button");
+    if (hiddenResetButton instanceof HTMLDivElement) {
+        hiddenResetButton.style.display = "none";
+    }
+    // reset calculation status
+    hasCalculated = false;
 }
+// function outputToDummy(content: any) {
+//     const dummy = document.getElementById("dummy");
+//     if (dummy instanceof HTMLDivElement) {
+//         dummy.innerHTML += ("\n" + content.toString());
+//     }
+// }
 // add all event listeners
 document.addEventListener('keydown', function (event) {
     if (event.key === 'e' || event.key === 'E') { // Enter -> trigger calculation
